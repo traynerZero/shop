@@ -14,7 +14,11 @@ class CreateTransactionTable extends Migration
     public function up()
     {
         Schema::create('transaction', function (Blueprint $table) {
-            $table->increments('id');
+            $table->increments('transaction_id');
+            $table->integer('user_id')->references('userid')->on('users');
+            $table->json('products');
+            $table->decimal('total_amount',12,4);
+            $table->integer('status');
             $table->timestamps();
         });
     }
