@@ -33,3 +33,7 @@ Route::post('/addtoCart',[
     'uses' => 'TransactionController@addtoCart',
     'as' => 'f.submit'
 ]);
+
+Route::get('/clearCart','TransactionController@clearCart');
+
+Route::get('/viewCart','TransactionController@viewCart');

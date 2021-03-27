@@ -8,6 +8,14 @@ class TransactionController extends Controller
 {
     //
 
+    public function clearCart(){
+        session()->put("cart",array());
+    }
+
+    public function viewCart(){
+        echo json_encode(session()->get("cart"));
+    }
+
     public function addtoCart(Request $request){
 
         $product_id = $request->input("id");
@@ -16,10 +24,9 @@ class TransactionController extends Controller
             
             $cart = session()->get("cart");
 
-            
-            foreach($cart as $c){
-                if($c['id'] == $product_id){
-                    $c['quant'] += 1;
+            foreach($cart as $c => $v){
+                if($cart[$c]['id'] == $product_id){
+                    $cart[$c]['quant'] += 1;
                     
                 }else{
                     $data = array(
