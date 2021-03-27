@@ -27,7 +27,7 @@
 <body>
 	<header id="header"><!--header-->
 		@if(session()->get("userlogged") != 0)
-			{{ $data = session()->get("userdata")  }}
+			
 
 			<div class="header-middle"><!--header-middle-->
 			<div class="container">
@@ -40,7 +40,7 @@
 					<div class="col-sm-8">
 						<div class="shop-menu pull-right">
 							<ul class="nav navbar-nav">
-								<li><a href="#"><i class="fa fa-user"></i>{{ $data[0]['email'] }}</a></li>
+								<li><a href="#"><i class="fa fa-user"></i></a></li>
 								<li><a href="#"><i class="fa fa-star"></i> Wishlist</a></li>
 								<li><a href="checkout.html"><i class="fa fa-crosshairs"></i> Checkout</a></li>
 								<li><a href="cart.html"><i class="fa fa-shopping-cart"></i> Cart</a></li>
