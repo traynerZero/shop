@@ -12,7 +12,7 @@ class TransactionController extends Controller
 
         $product_id = $request->input("id");
 
-        if(session()->get("cart") != null){
+        if(isset(session()->get("cart"))){
             
             $cart = session()->get("cart");
 
