@@ -26,8 +26,8 @@ class TransactionController extends Controller
             $cart = session()->get("cart");
 
             foreach($cart as $c => $v){
-                if($cart[$c]['id'] == $product_id){
-                    $cart[$c]['quant'] += 1;
+                if($cart[$product_id]['id'] == $product_id){
+                    $cart[$product_id]['quant'] += 1;
                     
                 }else{
                     $data = array(
@@ -35,7 +35,7 @@ class TransactionController extends Controller
                         "quant" => 1
                     );
                     
-                    array_push($cart,$data);
+                    $cart[$product_id] = $data;
                 }
             }
             session()->put('cart', $cart);
@@ -49,7 +49,7 @@ class TransactionController extends Controller
                 "quant" => 1
             );
             
-            array_push($cart,$data);
+            $cart[$product_id] = $data;
 
             session()->put('cart', $cart);
         }
