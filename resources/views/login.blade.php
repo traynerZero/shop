@@ -52,6 +52,3 @@
 		</div>
 	</section><!--/form-->
 	
-	
-		
-		@include('footer')
