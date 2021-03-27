@@ -27,7 +27,7 @@
 <body>
 	<header id="header"><!--header-->
 		@if(session()->get("userlogged") != 0)
-			{{ $data = session()->get("userdata")[0]  }}
+			{{ $data = json_encode(session()->get("userdata")) }}
 
 			<div class="header-middle"><!--header-middle-->
 			<div class="container">
