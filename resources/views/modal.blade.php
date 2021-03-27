@@ -1,6 +1,6 @@
 
 
-<div class="modal-header border-bottom-0"  style="background-color:white;">
+<div class="modal-header border-bottom-0"  style="background-color:white; width:50%;">
 			<h5 class="modal-title" id="exampleModalLabel">
 			Your Shopping Cart
 			</h5>
@@ -43,12 +43,14 @@
         <div class="d-flex justify-content-end">
           <h5>Total: <span class="price text-success">89$</span></h5>
         </div>
-    </div>
-
-      <div class="modal-footer border-top-0 d-flex justify-content-between"  style="background-color:white;">
+        
+      <div class="modal-footer border-top-0 d-flex justify-content-between">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
         <button type="button" class="btn btn-success">Checkout</button>
       </div>
+
+    </div>
+
 
     
 
