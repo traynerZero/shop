@@ -41,7 +41,7 @@ class LoginController extends Controller
                 session("userdata",$data);
                 session("userlogged",$user->userid);
                 
-                return redirect('index');
+                return redirect('/');
 
             }
         }else{
@@ -80,7 +80,7 @@ class LoginController extends Controller
             session("userdata",$data);
             session("userlogged",$user->userid);
             
-            return view("index");
+            return redirect('/');
 
         }
 
