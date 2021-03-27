@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
+Route::get('/',"ProductController@index");
 
 
 Route::get('/login',function () {
