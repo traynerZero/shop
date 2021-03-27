@@ -1,6 +1,6 @@
 
 
-<div class="modal-header border-bottom-0"  style="background-color:white; width:50%;">
+<div class="modal-header border-bottom-0">
 			<h5 class="modal-title" id="exampleModalLabel">
 			Your Shopping Cart
 			</h5>
