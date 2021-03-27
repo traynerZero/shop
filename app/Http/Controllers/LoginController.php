@@ -41,7 +41,7 @@ class LoginController extends Controller
                 session("userdata",$data);
                 session("userlogged",$user->userid);
                 
-                return view("index");
+                return redirect('index');
 
             }
         }else{
