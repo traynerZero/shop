@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/',"ProductController@index");
+Route::get('/',"ProductsController@index");
 
 
 Route::get('/login',function () {
