@@ -21,10 +21,14 @@ class TransactionController extends Controller
             array_push($ids,$c['id']);
         }
 
-        // $data = Product::whereIn('id',)
+        $product = Product::whereIn('id',$ids)->get();
 
-        echo json_encode($ids);
-        // return view('modal')->with('data',$data);
+        $cart_view = array(
+            'product' => $product,
+            'cart' => $cart
+        );
+
+        return view('modal')->with('data',$cart_view);
     }
 
     public function addtoCart(Request $request){

@@ -43,7 +43,7 @@
 								<li><a href="#"><i class="fa fa-user"></i>{{ session()->get("userdata")['email'] }}</a></li>
 								<li><a href="#"><i class="fa fa-star"></i> Wishlist</a></li>
 								<li><a href="checkout.html"><i class="fa fa-crosshairs"></i> Checkout</a></li>
-								<li><a href="#" data-toggle="modal" data-target="#cartModal"><i class="fa fa-shopping-cart"></i> Cart</a></li>
+								<li><a href="{{ url('/viewCart') }}" data-toggle="modal" data-target="#cartModal"><i class="fa fa-shopping-cart"></i> Cart</a></li>
 								<li><a href="{{ url('/logout') }}"><i class="fa fa-lock"></i> Logout</a></li>
 							</ul>
 						</div>
