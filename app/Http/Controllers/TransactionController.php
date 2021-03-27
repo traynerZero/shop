@@ -38,6 +38,7 @@ class TransactionController extends Controller
             session()->put('cart', $cart);
         }
 
+        $request->session()->save(); 
         echo json_encode(session()->get("cart"));
 
     }
