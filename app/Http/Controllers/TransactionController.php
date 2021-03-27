@@ -8,9 +8,8 @@ class TransactionController extends Controller
 {
     //
 
-    public function clearCart(){
+    public function clearCart(Request $request){
         $request->session()->forget('cart');
-
         $request->session()->flush();
     }
 
