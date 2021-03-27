@@ -30,9 +30,7 @@
 
 </style>
 
-<div class="modal fade" id="cartModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg modal-dialog-centered" role="document" style="width:100vh;">
-    <div class="modal-content">
+
       <div class="modal-header border-bottom-0">
         <h5 class="modal-title" id="exampleModalLabel">
           Your Shopping Cart
@@ -80,6 +78,5 @@
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
         <button type="button" class="btn btn-success">Checkout</button>
       </div>
-    </div>
-  </div>
-</div>
+    
+

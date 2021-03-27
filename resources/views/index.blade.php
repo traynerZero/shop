@@ -55,6 +55,14 @@
 		</div>
 	</section>
 
+	<div class="modal fade" id="cartModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered" role="document" style="width:100vh;">
+    <div class="modal-content">
+
+    </div>
+  </div>
+</div>
+
 	<script>
 		$(document).ready(function(){
 
@@ -78,4 +86,3 @@
 
 		});
 	</script>
-@include('modal')
