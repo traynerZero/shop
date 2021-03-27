@@ -16,9 +16,9 @@ class TransactionController extends Controller
             
             $cart = session()->get("cart");
 
-            echo json_encode($cart);
+            
             foreach($cart as $c){
-               
+                echo $c['id'];
             }
 
         }else{
