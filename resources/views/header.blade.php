@@ -26,7 +26,6 @@
 
 <body>
 	<header id="header"><!--header-->
-	@if(session("userlogged") != null)
 		@if(session("userlogged") != 0)
 			{{ $data = session("userdata")  }}
 
@@ -52,8 +51,6 @@
 				</div>
 			</div>
 		</div><!--/header-middle-->
-
-		@endif
 	@else
 
 	<div class="header-middle"><!--header-middle-->

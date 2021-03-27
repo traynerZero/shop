@@ -23,6 +23,7 @@ class LoginController extends Controller
 
         $email = $request->input('email');
         $pass = $request->input('password');
+        session("userlogged",0);
 
         $user = Users::where([['email','=',$email], ['password','=',$pass], ['status','=',0]])->first();
 
