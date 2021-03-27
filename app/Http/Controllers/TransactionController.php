@@ -21,7 +21,7 @@ class TransactionController extends Controller
             array_push($ids,$c['id']);
         }
 
-        $product = Product::whereIn('id',$ids)->get();
+        $product = Product::whereIn('product_id',$ids)->get();
 
         $cart_view = array(
             'product' => $product,
