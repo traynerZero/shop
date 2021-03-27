@@ -16,4 +16,16 @@ Route::get('/', function () {
 });
 
 
-Route::get('/login','LoginController@test');
+Route::get('/login',function () {
+    return view('login');
+});
+
+Route::post('/login/checkUser',[
+    'uses' => 'LoginController@signIn',
+    'as' => 'f.submit'
+]);
+
+Route::post('/login/registerUser',[
+    'uses' => 'LoginController@signUp',
+    'as' => 'f.submit'
+]);

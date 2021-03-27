@@ -6,16 +6,21 @@
 				<div class="col-sm-4 col-sm-offset-1">
 					<div class="login-form"><!--login form-->
 						<h2>Login to your account</h2>
-						<h1>{{ $user['firstname'] }}</h1>
-						<form action="#">
-							<input type="text" placeholder="Name" />
-							<input type="email" placeholder="Email Address" />
-							<span>
+						<form action="{{ url('/login/checkUser') }}" method="post">
+							{{ csrf_field() }}
+							<input type="text" placeholder="Email Address" name="email" />
+							<input type="email" placeholder="Password" name="password"/>
+							<!-- <span>
 								<input type="checkbox" class="checkbox"> 
 								Keep me signed in
-							</span>
+							</span> -->
 							<button type="submit" class="btn btn-default">Login</button>
 						</form>
+						@if(session('error'))
+						<div class="msg">
+							<p>{{ session('error')  }}</p>
+						</div>
+						@endif
 					</div><!--/login form-->
 				</div>
 				<div class="col-sm-1">
