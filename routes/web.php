@@ -27,3 +27,9 @@ Route::post('/login/registerUser',[
     'uses' => 'LoginController@signUp',
     'as' => 'f.submit'
 ]);
+
+
+Route::post('/login/registerUser',[
+    'uses' => 'LoginController@signUp',
+    'as' => 'f.submit'
+]);

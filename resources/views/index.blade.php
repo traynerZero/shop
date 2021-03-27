@@ -60,7 +60,19 @@
 
 			$('.add-to-cart').on('click',function(){
 				var id = $(this).attr('data-id');
-				alert(id);
+				
+				$.ajax({
+					type: "POST",
+					url: "{{ url('/addtoCart') }}",
+					data: {
+					"_token": "{{ csrf_token() }}",
+					"id": id
+					},
+					dataType: "json",
+					encode: true,
+					}).done(function (data) {
+					console.log(data);
+				});
 
 			});
 
