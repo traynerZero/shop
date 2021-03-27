@@ -8,8 +8,8 @@
 						<h2>Login to your account</h2>
 						<form action="{{ url('/login/checkUser') }}" method="post">
 							{{ csrf_field() }}
-							<input type="text" placeholder="Email Address" name="email" />
-							<input type="email" placeholder="Password" name="password"/>
+							<input type="email" placeholder="Email Address" name="email" />
+							<input type="password" placeholder="Password" name="password"/>
 							<!-- <span>
 								<input type="checkbox" class="checkbox"> 
 								Keep me signed in
