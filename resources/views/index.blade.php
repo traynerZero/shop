@@ -99,5 +99,11 @@
 
 			});
 
+			function loadModal(){
+			$('.modal-body').load("{{ url('/viewCart') }}",function(){
+				$('#cartModal').modal({show:true});
+			});
+			}
+
 		});
 	</script>
