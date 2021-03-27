@@ -20,7 +20,7 @@ class LoginController extends Controller
     }
 
     public function signIn(Request $request){
-
+        session_start();
         $email = $request->input('email');
         $pass = $request->input('password');
         session("userlogged",0);
