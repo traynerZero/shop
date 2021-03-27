@@ -39,10 +39,11 @@ class LoginController extends Controller
                     'email' => "test".$user->email,
                 );
     
-                $s = session("userdata",$data);
-                session("userlogged",$user->userid);
+                session()->put('userdata', $data);
+                session()->put('userlogged', $user->userid); 
+                $request->session()->save(); 
                 
-                return redirect('/')-with($s);
+                return redirect('/');
 
             }
         }else{
