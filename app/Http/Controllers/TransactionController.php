@@ -25,19 +25,17 @@ class TransactionController extends Controller
             
             $cart = session()->get("cart");
 
-            foreach($cart as $c){
-                if($c[$product_id]['id'] == $product_id){
-                    $c[$product_id]['quant'] += 1;
-                    
-                }else{
-                    $data = array(
-                        "id" => $product_id,
-                        "quant" => 1
-                    );
-                    
-                    $cart[$product_id] = $data;
-                }
+            if(isset($cart[$product_id])){
+                $cart[$product_id]['quant'] += 1;
+            }else{
+                $data = array(
+                    "id" => $product_id,
+                    "quant" => 1
+                );
+                
+                $cart[$product_id] = $data;
             }
+            
             session()->put('cart', $cart);
         }else{
             //first item
