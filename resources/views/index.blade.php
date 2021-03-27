@@ -59,7 +59,7 @@
 		$(document).ready(function(){
 
 			$('.add-to-cart').on('click',function(){
-				var id = $(this).data('data-id');
+				var id = $(this).attr('data-id');
 				alert(id);
 
 			});
