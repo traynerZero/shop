@@ -1,4 +1,6 @@
 @include('header')
+
+
 <section id="slider"><!--slider-->
 		<div class="container">
 			<div class="row">

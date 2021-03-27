@@ -18,7 +18,7 @@
 						</form>
 						@if(session('error'))
 						<div class="msg">
-							<p>{{ session('error')  }}</p>
+							<p style="color:red;">{{ session('error')  }}</p>
 						</div>
 						@endif
 					</div><!--/login form-->
@@ -29,12 +29,23 @@
 				<div class="col-sm-4">
 					<div class="signup-form"><!--sign up form-->
 						<h2>New User Signup!</h2>
-						<form action="#">
-							<input type="text" placeholder="Name"/>
-							<input type="email" placeholder="Email Address"/>
-							<input type="password" placeholder="Password"/>
+						<form action="{{ url('/login/registerUser') }}" method="post">
+						{{ csrf_field() }}
+							<input type="email" placeholder="Email Address" name="reg_email"/>
+							<input type="password" placeholder="Password" name="reg_pass"/>
+							<input type="password" placeholder="Confirm Password" name="reg_cfpass"/>
 							<button type="submit" class="btn btn-default">Signup</button>
 						</form>
+						@if(session('reg_error'))
+						<div class="msg">
+							<p style="color:red;">{{ session('reg_error')  }}</p>
+						</div>
+						@endif
+						@if(session('reg_success'))
+						<div class="msg">
+							<p style="color:green;">{{ session('reg_success')  }}</p>
+						</div>
+						@endif
 					</div><!--/sign up form-->
 				</div>
 			</div>
