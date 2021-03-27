@@ -54,7 +54,7 @@
             </tr>
           </thead>
           <tbody>
-            @foreach($data['product'] as product)
+            @foreach($data['product'] as $product)
             <tr>
               <td class="w-25">
                 <img style="width:10vh; height 10vh;" src="images/home/product1.jpg" class="img-fluid img-thumbnail" alt="Sheep">
