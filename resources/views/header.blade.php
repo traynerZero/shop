@@ -26,7 +26,7 @@
 
 <body>
 	<header id="header"><!--header-->
-	@if(isset(session("userlogged")))
+	@if(session("userlogged") != null)
 		@if(session("userlogged") != 0)
 			{{ $data = session("userdata")  }}
 
