@@ -1,35 +1,4 @@
-<link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet">
-<style>
 
-.table-image {
-  
-  thead {
-    td, th {
-      border: 0;
-      color: #666;
-      font-size: 0.8rem;
-    }
-  }
-  
-  td, th {
-    vertical-align: middle;
-    text-align: center;
-    
-    &.qty {
-      max-width: 2rem;
-    }
-  }
-}
-
-.price {
-  margin-left: 1rem;
-}
-
-.modal-footer {
-  padding-top: 0rem;
-}
-
-</style>
 
 <div class="modal-header border-bottom-0">
 			<h5 class="modal-title" id="exampleModalLabel">

@@ -55,6 +55,38 @@
 		</div>
 	</section>
 
+	
+<style>
+
+.table-image {
+  
+  thead {
+    td, th {
+      border: 0;
+      color: #666;
+      font-size: 0.8rem;
+    }
+  }
+  
+  td, th {
+    vertical-align: middle;
+    text-align: center;
+    
+    &.qty {
+      max-width: 2rem;
+    }
+  }
+}
+
+.price {
+  margin-left: 1rem;
+}
+
+.modal-footer {
+  padding-top: 0rem;
+}
+
+</style>
 	<div class="modal fade" id="cartModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   	<div class="modal-dialog modal-lg modal-dialog-centered" role="document" style="width:100vh;">
     <div class="modal-content">
