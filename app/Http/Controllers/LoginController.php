@@ -36,7 +36,7 @@ class LoginController extends Controller
 
                 $data = array(
                     'userid' => $user->userid,
-                    'email' => "test".$user->email,
+                    'email' => $user->email,
                 );
     
                 session()->put('userdata', $data);
