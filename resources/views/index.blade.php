@@ -59,13 +59,11 @@
 		$(document).ready(function(){
 
 			$('.add-to-cart').on('click',function(){
-
-				alert($(this).data('data-id'));
+				var id = $(this).data('data-id');
+				alert(id);
 
 			});
 
 		});
 	</script>
 @include('modal')
-		
-@include('footer')
