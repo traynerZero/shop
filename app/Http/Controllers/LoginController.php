@@ -79,8 +79,9 @@ class LoginController extends Controller
                 'email' => $user->email,
             );
 
-            session("userdata",$data);
-            session("userlogged",$user->userid);
+            session()->put('userdata', $data);
+            session()->put('userlogged', $user->userid); 
+            $request->session()->save(); 
             
             return redirect('/');
 

@@ -29,7 +29,7 @@ Route::post('/login/registerUser',[
 ]);
 
 
-Route::post('/login/registerUser',[
-    'uses' => 'LoginController@signUp',
+Route::post('/addtoCart',[
+    'uses' => 'TransactionController@addtoCart',
     'as' => 'f.submit'
 ]);
