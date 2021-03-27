@@ -54,12 +54,13 @@
             </tr>
           </thead>
           <tbody>
+            @foreach($data['product'] as product)
             <tr>
               <td class="w-25">
-                <img style="width:10vh; height 10vh;" src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/vans.png" class="img-fluid img-thumbnail" alt="Sheep">
+                <img style="width:10vh; height 10vh;" src="images/home/product1.jpg" class="img-fluid img-thumbnail" alt="Sheep">
               </td>
-              <td>Vans Sk8-Hi MTE Shoes</td>
-              <td>89$</td>
+              <td>{{ $product->product_name }}</td>
+              <td>{{ $product->price }}</td>
               <td class="qty"><input type="text" class="form-control" id="input1" value="2"></td>
               <td>178$</td>
               <td>
@@ -68,6 +69,7 @@
                 </a>
               </td>
             </tr>
+            @endforeach
           </tbody>
         </table> 
         <div class="d-flex justify-content-end">
