@@ -22,15 +22,16 @@
             </tr>
           </thead>
           <tbody>
-            @foreach($data['product'] as $product)
+            @foreach($data as $product)
             <tr>
               <td class="w-25">
                 <img style="width:10vh; height 10vh;" src="images/home/product1.jpg" class="img-fluid img-thumbnail" alt="Sheep">
               </td>
-              <td>{{ $product->product_name }}</td>
+              <td>{{ $product->prod_name }}</td>
               <td>{{ $product->price }}</td>
-              <td class="qty"><input type="text" class="form-control" id="input1" value="2"></td>
-              <td>178$</td>
+              <td class="qty"><input type="text" class="form-control" id="input1" value="{{ $product->quantity }}"></td>
+                
+              <td>{{ $product->total }}</td>
               <td>
                 <a href="#" class="btn btn-danger btn-sm">
                   <i class="fa fa-times"></i>

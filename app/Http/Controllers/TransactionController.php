@@ -23,12 +23,28 @@ class TransactionController extends Controller
 
         $product = Product::whereIn('product_id',$ids)->get();
 
-        $cart_view = array(
-            'product' => $product,
-            'cart' => $cart
-        );
+        $data = array();
+        foreach($cart as $c){
+            foreach($product as $prod){
+                
+                if($c['id'] == $prod->product_id){
 
-        return view('modal')->with('data',$cart_view);
+                    $d = array(
+                        "prod_id" => $prod->product_id,
+                        "prod_name" => $prod->product_name,
+                        "price" => $prod->price,
+                        "quantity" => $c['quant'],
+                        "total" => $prod->price * $c['quant']
+                    );
+
+                    array_push($data,$d);
+
+                }
+
+            }
+        }
+
+        return view('modal')->with('data',$data);
     }
 
     public function addtoCart(Request $request){
