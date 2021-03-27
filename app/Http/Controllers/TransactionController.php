@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Product;
 use Illuminate\Http\Request;
 
 class TransactionController extends Controller
@@ -14,7 +15,16 @@ class TransactionController extends Controller
     }
 
     public function viewCart(){
-        echo json_encode(session()->get("cart"));
+        $cart = session()->get("cart");
+        $ids = array();
+        foreach($cart as $c){
+            array_push($ids,$c['id']);
+        }
+
+        // $data = Product::whereIn('id',)
+
+        echo json_encode($ids);
+        // return view('modal')->with('data',$data);
     }
 
     public function addtoCart(Request $request){
@@ -35,7 +45,7 @@ class TransactionController extends Controller
                 
                 $cart[$product_id] = $data;
             }
-            
+
             session()->put('cart', $cart);
         }else{
             //first item
