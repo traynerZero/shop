@@ -56,7 +56,7 @@
           <tbody>
             <tr>
               <td class="w-25">
-                <img src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/vans.png" class="img-fluid img-thumbnail" alt="Sheep">
+                <img style="width:10vh; height 10vh;" src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/vans.png" class="img-fluid img-thumbnail" alt="Sheep">
               </td>
               <td>Vans Sk8-Hi MTE Shoes</td>
               <td>89$</td>
