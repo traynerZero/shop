@@ -9,7 +9,9 @@ class TransactionController extends Controller
     //
 
     public function clearCart(){
-        session()->put("cart",array());
+        $request->session()->forget('cart');
+
+        $request->session()->flush();
     }
 
     public function viewCart(){
