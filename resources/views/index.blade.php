@@ -26,6 +26,7 @@
 											<img src="images/home/product1.jpg" alt="" />
 											<h2>{{ number_format($product->price,2)  }}</h2>
 											<p>{{ $product->product_name }}</p>
+											<p>Stock: {{ $product->stocks }}</p>
 											<a href="#" data-id="{{ $product->product_id }}" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
 										</div>
 										<div class="product-overlay">
