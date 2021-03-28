@@ -18,6 +18,10 @@ class TransactionController extends Controller
     }
 
     public function viewCart(Request $request){
+        if(is_null(session()->get("cart"))){
+            $request->session()->flash('success_toast', 'Order succesfuly submitted.');
+            return back();
+        }else{
         $cart = session()->get("cart");
         $ids = array();
         foreach($cart as $c){
@@ -52,6 +56,7 @@ class TransactionController extends Controller
         $request->session()->save(); 
 
         return view('modal')->with('data',$data);
+    }
     }
 
     public function inputCardInfo(){
