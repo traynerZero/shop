@@ -12,7 +12,7 @@ class ProductsController extends Controller
     public function index()
     {
         
-        $product = Product::where('status','0')->get();
+        $product = Product::where([['status','=','0'],['stocks','<=','0']])->get();
 
         return view("index")->with('data',$product);
 
