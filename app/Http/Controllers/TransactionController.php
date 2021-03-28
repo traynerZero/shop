@@ -291,7 +291,7 @@ class TransactionController extends Controller
         curl_close($ch);
 
         if($httpcode == 201){
-            return $this->saveOrder();
+            return $this->saveOrder(new Request);
         }else if($httpcode == 401){
             $request->session()->flash('error_toast', 'API key provided is not acceptable. Must be one of (pk_live_key sk_live_key pk_test_key sk_test_key).');
             return view("/");
