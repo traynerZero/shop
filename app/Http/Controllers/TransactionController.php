@@ -13,7 +13,6 @@ class TransactionController extends Controller
     public function clearCart(Request $request){
         $request->session()->forget('cart');
         $request->session()->forget('checkout_data');
-        $request->session()->flush();
 
         return back();
     }
@@ -133,7 +132,6 @@ class TransactionController extends Controller
 
         $request->session()->forget('cart');
         $request->session()->forget('checkout_data');
-        $request->session()->flush();
 
         $request->session()->flash('success_toast', 'Order succesfuly submitted.');
         
