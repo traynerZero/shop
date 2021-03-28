@@ -55,7 +55,7 @@
 		</div>
 	</section>
 
-	<div class="alert alert-success addedToCart" style="display:none; position:fixed; top:0;">
+	<div class="alert alert-success addedToCart" style="display:none; position: fixed; top: 0px; width:100%; text-align:center;">
     	<strong>Success!</strong> Item added to Cart!
   	</div>
 
@@ -120,8 +120,8 @@
 					console.log(data);
 					$('.addedToCart').show('blind');
 					setTimeout(() => {
-						$('.addedToCart').show('blind');
-					}, 1000);
+						$('.addedToCart').hide('blind');
+					}, 2000);
 				});
 
 			});
