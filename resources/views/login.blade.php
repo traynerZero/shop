@@ -54,7 +54,7 @@
 
 	@if(session('error_toast'))
 
-	<div class="alert alert-success addedToCart" style="position: fixed; top: 0px; width:100%; text-align:center;">
+	<div class="alert alert-danger addedToCart" style="position: fixed; top: 0px; width:100%; text-align:center;">
 							<strong>Error!</strong> {{ session('error_toast') }}
 	</div>
 	<script>
