@@ -137,7 +137,7 @@ class TransactionController extends Controller
 
         $request->session()->flash('success_toast', 'Order succesfuly submitted.');
         $request->session()->save(); 
-        return view("/index");
+        return redirect()->route('/');
 
         }else{
             //login first
@@ -236,10 +236,10 @@ class TransactionController extends Controller
             return $this->createChargeMagpie($request, $token_card);
         }else if($httpcode == 401){
             $request->session()->flash('error_toast', 'API key provided is not acceptable. Must be one of (pk_live_key sk_live_key pk_test_key sk_test_key).');
-            return view("/");
+            return redirect()->route('/');
         }else{
             $request->session()->flash('error_toast', 'Card number provided is not a valid card.');
-            return view("/");
+            return redirect()->route('/');
         }
         
     }
@@ -296,10 +296,10 @@ class TransactionController extends Controller
             return $this->saveOrder($request);
         }else if($httpcode == 401){
             $request->session()->flash('error_toast', 'API key provided is not acceptable. Must be one of (pk_live_key sk_live_key pk_test_key sk_test_key).');
-            return view("/");
+            return redirect()->route('/');
         }else{
             $request->session()->flash('error_toast', 'Card number provided is not a valid card.');
-            return view("/");
+            return redirect()->route('/');
         }
 
 
