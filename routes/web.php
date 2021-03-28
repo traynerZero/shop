@@ -45,3 +45,6 @@ Route::get('/checkout','TransactionController@checkout');
 Route::get('/saveOrder','TransactionController@saveOrder');
 
 Route::get('/admin',"AdminController@index");
+
+
+Route::get('/connectMagpie','TransactionController@connectMagpie');

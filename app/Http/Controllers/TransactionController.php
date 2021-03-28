@@ -138,4 +138,36 @@ class TransactionController extends Controller
 
     }
 
+    public function connectMagpie(){
+        $header = base64_encode('pk_test_JoAZxCrQclxmAwfPRrESow'. ':');
+
+        $cardObj = array(
+        "card" => array(
+            "name" => "Juan de la Cruz",
+            "number" => "4111111111111111",
+            "exp_month" => 4,
+            "exp_year" => 2025,
+            "cvc" => "751"
+        )
+        );
+
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, "https://api.magpie.im/v1/tokens");
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
+        curl_setopt($ch, CURLOPT_HEADER, FALSE);
+        curl_setopt($ch, CURLOPT_POST, TRUE);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($cardObj));
+        curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+        "Content-Type: application/json",
+        "Accept: application/json",
+        "Authorization: Basic " . $header
+        ));
+
+        $response = curl_exec($ch);
+        curl_close($ch);
+
+        var_dump($response);
+        echo $response;
+    }
+
 }
