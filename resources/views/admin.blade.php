@@ -124,7 +124,7 @@
 	<script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
 
 
-	<div class="container">
+	<div style="width:150vh;">
 				<table id="table" class="table table-condensed table-responsive table-hover">
 					<thead>
 							<th class="image">ORDER ID</th>
@@ -137,22 +137,22 @@
 					<tbody>
 					@foreach($data as $trans)
 						<tr>
-							<td class="cart_product">
+							<td>
 								{{ $trans['transaction_id'] }}
 							</td>
 							<td>{{ $trans['user_id'] }}</td>
-							<td class="cart_description">
+							<td>
 								@foreach(json_decode($trans['products']) as $prod)
 								<p>{{ $prod->prod_name }} - {{ $prod->quantity }} pcs. - {{ $prod->total }}</p>
 								@endforeach
 							</td>
-							<td class="cart_price">
+							<td>
 								<p>{{ number_format($trans['total_amount'],2) }}</p>
 							</td>
-							<td class="cart_quantity">
+							<td>
 								<p>{{ $trans['status'] }}</p>
 							</td>
-							<td class="cart_delete">
+							<td>
 								<a class="cart_quantity_delete" href=""><i class="fa fa-info"></i></a>
 							</td>
 						</tr>
