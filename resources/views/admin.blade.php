@@ -142,7 +142,7 @@
 							<td>{{ $trans['user_id'] }}</td>
 							<td class="cart_description">
 								@foreach(json_decode($trans['products']) as $prod)
-								<p>{{ $prod['prod_name'] }} - {{ $prod['quantity'] }} pcs. - {{ $prod['total'] }}</p>
+								<p>{{ $prod->prod_name }} - {{ $prod->quantity }} pcs. - {{ $prod->total }}</p>
 								@endforeach
 							</td>
 							<td class="cart_price">
