@@ -124,7 +124,7 @@
 	<script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
 
 
-	<div style="width:150vh;">
+	<div class="container" style="width:150vh;">
 				<table id="table" class="table table-condensed table-responsive table-hover">
 					<thead>
 							<th class="image">ORDER ID</th>
@@ -159,7 +159,7 @@
 					@endforeach
 					</tbody>
 				</table>
-	</div>
+	 </div>
 
 	<script>
 		$(document).ready(function() {
