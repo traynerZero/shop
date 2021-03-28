@@ -13,6 +13,8 @@
 
 Route::get('/',"ProductsController@index");
 
+Route::get('/logout',"LoginController@logout");
+
 
 Route::get('/login',function () {
     return view('login');
