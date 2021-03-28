@@ -126,34 +126,31 @@
 					<thead>
 						<tr class="cart_menu">
 							<td class="image">ORDER ID</td>
-							<td class="description"></td>
-							<td class="price">Price</td>
-							<td class="quantity">Quantity</td>
-							<td class="total">Total</td>
-							<td></td>
+							<td class="description">CUSTOMER ID</td>
+							<td class="price">PRODUCTS</td>
+							<td class="quantity">TOTAL AMOUNT</td>
+							<td class="total">STATUS</td>
+							<td>ACTION</td>
 						</tr>
 					</thead>
 					<tbody>
 					@foreach($data as $trans)
 						<tr>
 							<td class="cart_product">
-								<a href=""><img src="images/cart/one.png" alt=""></a>
+								{{ $trans['transaction_id'] }}
 							</td>
+							<td>{{ $trans['user_id'] }}</td>
 							<td class="cart_description">
-								<h4><a href="">{{ $product['prod_name'] }}</a></h4>
-								<p>{{ $product['prod_description'] }}</p>
+								<p>{{ $trans['products'] }}</p>
 							</td>
 							<td class="cart_price">
-								<p>{{ number_format($product['price'],2) }}</p>
+								<p>{{ number_format($trans['total_amount'],2) }}</p>
 							</td>
 							<td class="cart_quantity">
-								<p>{{ $product['quantity'] }}</p>
-							</td>
-							<td class="cart_total">
-								<p class="cart_total_price">{{ number_format($product['total'],2) }}</p>
+								<p>{{ $trans['status'] }}</p>
 							</td>
 							<td class="cart_delete">
-								<a class="cart_quantity_delete" href=""><i class="fa fa-times"></i></a>
+								<a class="cart_quantity_delete" href=""><i class="fa fa-info"></i></a>
 							</td>
 						</tr>
 					@endforeach

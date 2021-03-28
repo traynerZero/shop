@@ -27,8 +27,17 @@ class LoginController extends Controller
         if(!empty($user->userid)){
             if($user->user_type == 1){
 
-                $request->session()->flash('error', 'Invalid User! Please Contact Administrator.');
-                return back();
+                $data = array(
+                    'userid' => $user->userid,
+                    'email' => $user->email,
+                );
+    
+                session()->put('userdata', $data);
+                session()->put('userlogged', $user->userid); 
+                $request->session()->save(); 
+                
+                return redirect('/admin');
+
             }else{
 
                 $data = array(
