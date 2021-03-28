@@ -14,7 +14,7 @@ class TransactionController extends Controller
         $request->session()->flush();
     }
 
-    public function viewCart(){
+    public function viewCart(Request $request){
         $cart = session()->get("cart");
         $ids = array();
         foreach($cart as $c){
