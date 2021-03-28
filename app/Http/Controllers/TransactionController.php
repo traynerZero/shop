@@ -93,6 +93,8 @@ class TransactionController extends Controller
 
     public function checkout(){
         $cart = session()->get("checkout_data");
+
+        return view('checkout')->with('data',$cart);
     }
 
 }
