@@ -146,7 +146,7 @@ class TransactionController extends Controller
 
     }
 
-    public function connectMagpie(){
+    public function testMagpie(){
         $header = base64_encode('pk_test_JoAZxCrQclxmAwfPRrESow'. ':');
 
         $cardObj = array(
@@ -156,6 +156,56 @@ class TransactionController extends Controller
             "exp_month" => 4,
             "exp_year" => 2025,
             "cvc" => "751"
+        )
+        );
+
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, "https://api.magpie.im/v1/tokens");
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
+        curl_setopt($ch, CURLOPT_HEADER, FALSE);
+        curl_setopt($ch, CURLOPT_POST, TRUE);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($cardObj));
+        curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+        "Content-Type: application/json",
+        "Accept: application/json",
+        "Authorization: Basic " . $header
+        ));
+
+        $response = curl_exec($ch);
+        curl_close($ch);
+
+        var_dump($response);
+        
+
+    }
+
+    public function connectMagpie(Request $request){
+
+        $name = $request->input('cardname');
+        $cnumber = $request->input('ccnum');;
+        $exp_month = $request->input('expmonth');
+        $exp_year = $request->input('expyear');
+        $cvc = $request->input('cvv');
+        $address_line1 = $request->input('address');
+        $address_city = $request->input('city');
+        $address_state = $request->input('state');
+        $address_zip = $request->input('zip');
+        $address_line2email = $request->input('email');
+
+        $header = base64_encode('pk_test_JoAZxCrQclxmAwfPRrESow'. ':');
+
+        $cardObj = array(
+        "card" => array(
+            "name" => $name,
+            "number" => $cnumber,
+            "exp_month" => $exp_month,
+            "exp_year" => $exp_year,
+            "cvc" => $cvc,
+            "address_city" => $address_city,
+            "address_line1" => $address_line1,
+            "address_line1" => $address_line2email,
+            "address_state" => $address_state,
+            "address_zip" => $address_zip
         )
         );
 

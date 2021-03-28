@@ -52,3 +52,5 @@ Route::get('/inputCardInfo','TransactionController@inputCardInfo');
 Route::get('/connectMagpie','TransactionController@connectMagpie');
 
 Route::get('/createChargeMagpie','TransactionController@createChargeMagpie');
+
+Route::get('/testMagpie','TransactionController@testMagpie');
