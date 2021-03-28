@@ -51,4 +51,17 @@
 			</div>
 		</div>
 	</section><!--/form-->
+
+	@if(session('error_toast'))
+
+	<div class="alert alert-success addedToCart" style="position: fixed; top: 0px; width:100%; text-align:center;">
+							<strong>Error!</strong> {{ session('error_toast') }}
+	</div>
+	<script>
+		setTimeout(() => {
+			$('.addedToCart').hide('blind');
+		}, 4000);
+	</script>
+	@endif
+	
 	

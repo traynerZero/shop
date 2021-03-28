@@ -131,6 +131,8 @@ class TransactionController extends Controller
 
         }else{
             //login first
+            $request->session()->flash('error_toast', 'Please Login First!.');
+            return view('/login');
         }
 
 
