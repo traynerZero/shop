@@ -42,15 +42,15 @@ Route::get('/viewCart','TransactionController@viewCart');
 
 Route::get('/checkout','TransactionController@checkout');
 
-Route::get('/saveOrder','TransactionController@saveOrder');
+// Route::get('/saveOrder','TransactionController@saveOrder');
 
 Route::get('/admin',"AdminController@index");
 
 Route::get('/inputCardInfo','TransactionController@inputCardInfo');
 
-
-Route::get('/connectMagpie','TransactionController@connectMagpie');
-
-Route::get('/createChargeMagpie','TransactionController@createChargeMagpie');
+Route::post('/connectMagpie',[
+    'uses' => 'TransactionController@connectMagpie',
+    'as' => 'f.submit'
+]);
 
 Route::get('/testMagpie','TransactionController@testMagpie');
