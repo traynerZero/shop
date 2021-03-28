@@ -183,7 +183,7 @@ class TransactionController extends Controller
     public function connectMagpie(Request $request){
 
         $name = $request->input('cardname');
-        $cnumber = $request->input('ccnum');;
+        $cnumber = $request->input('cardnumber');;
         $exp_month = $request->input('expmonth');
         $exp_year = $request->input('expyear');
         $cvc = $request->input('cvv');
@@ -201,11 +201,15 @@ class TransactionController extends Controller
             "number" => $cnumber,
             "exp_month" => $exp_month,
             "exp_year" => $exp_year,
-            "cvc" => $cvc
+            "cvc" => $cvc,
+            "address_city" => $address_city,
+            "address_line1" => $address_line1,
+            "address_line2" => $address_line2email,
+            "address_state" => $address_state,
+            "address_zip" => $address_zip
         )
         );
 
-        echo json_encode($cardObj);
 
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, "https://api.magpie.im/v1/tokens");
