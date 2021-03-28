@@ -48,3 +48,5 @@ Route::get('/admin',"AdminController@index");
 
 
 Route::get('/connectMagpie','TransactionController@connectMagpie');
+
+Route::get('/createChargeMagpie','TransactionController@createChargeMagpie');

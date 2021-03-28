@@ -151,6 +151,7 @@ class TransactionController extends Controller
         )
         );
 
+
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, "https://api.magpie.im/v1/tokens");
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
@@ -168,6 +169,51 @@ class TransactionController extends Controller
 
         var_dump($response);
         echo $response;
+    }
+
+    public function createChargeMagpie(){
+        
+        //tok_VIP0cUu1U4obvKVw4
+        //generated token
+
+        $total_amount = 2300;
+        $products = "Black Shirt 2 - 1 pcs. - 600
+
+        Black Shirt 1 - 2 pcs. - 1000
+        
+        Black Shirt 3 - 1 pcs. - 700";
+
+        $header = base64_encode('pk_test_JoAZxCrQclxmAwfPRrESow'. ':');
+
+        $chargeObj = array(
+            "amount" => $total_amount,
+            "currency"=> "php",
+            "source"=> "tok_VIP0cUu1U4obvKVw4",
+            "description\""=> $products,
+            "statement_descriptor"=> "ShopHere",
+            "capture"=> true
+        );
+
+
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, "https://api.magpie.im/v1/charges");
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
+        curl_setopt($ch, CURLOPT_HEADER, FALSE);
+        curl_setopt($ch, CURLOPT_POST, TRUE);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($chargeObj));
+        curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+        "Content-Type: application/json",
+        "Accept: application/json",
+        "Authorization: Basic " . $header
+        ));
+
+        $response = curl_exec($ch);
+        curl_close($ch);
+
+        var_dump($response);
+        echo $response;
+
+
     }
 
 }
