@@ -231,7 +231,7 @@ class TransactionController extends Controller
         $token_card = $response_data->id;
         // echo $response;
         if($httpcode == 201){
-            return $this->createChargeMagpie($token_card);
+            return $this->createChargeMagpie($request, $token_card);
         }else if($httpcode == 401){
             $request->session()->flash('error_toast', 'API key provided is not acceptable. Must be one of (pk_live_key sk_live_key pk_test_key sk_test_key).');
             return view("/");
@@ -242,7 +242,7 @@ class TransactionController extends Controller
         
     }
 
-    public function createChargeMagpie($token_card){
+    public function createChargeMagpie(Request $request, $token_card){
         
         //tok_VIP0cUu1U4obvKVw4
         //generated token
@@ -291,7 +291,7 @@ class TransactionController extends Controller
         curl_close($ch);
 
         if($httpcode == 201){
-            return $this->saveOrder(new Request);
+            return $this->saveOrder($request);
         }else if($httpcode == 401){
             $request->session()->flash('error_toast', 'API key provided is not acceptable. Must be one of (pk_live_key sk_live_key pk_test_key sk_test_key).');
             return view("/");
