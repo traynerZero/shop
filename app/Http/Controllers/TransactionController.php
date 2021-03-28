@@ -172,10 +172,11 @@ class TransactionController extends Controller
         ));
 
         $response = curl_exec($ch);
+        $httpcode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
         curl_close($ch);
 
-        var_dump($response);
-        
+        //var_dump($response);
+        echo $httpcode;
 
     }
 
