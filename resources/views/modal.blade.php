@@ -46,7 +46,7 @@
         
       <div class="modal-footer border-top-0 d-flex justify-content-between">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-success" href="{{ url('/checkout') }}">Checkout</button>
+        <a  href="{{ url('/checkout') }}" class="btn btn-success">Checkout</a>
       </div>
 
     </div>
