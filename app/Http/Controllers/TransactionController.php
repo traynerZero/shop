@@ -21,7 +21,7 @@ class TransactionController extends Controller
         $data = array();
 
         if(is_null(session()->get("cart"))){
-            $request->session()->flash('error_toast', 'Cart is Empty');
+            
             return view('modal')->with('data',$data);
         }else{
         $cart = session()->get("cart");
@@ -107,6 +107,7 @@ class TransactionController extends Controller
 
     public function checkout(){
         if(is_null(session()->get("checkout_data"))){
+            $request->session()->flash('error_toast', 'Cart is Empty');
             return back();
         }else{
         $cart = session()->get("checkout_data");
