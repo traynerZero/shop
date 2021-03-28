@@ -135,7 +135,7 @@ class TransactionController extends Controller
         $request->session()->forget('checkout_data');
         $request->session()->flush();
 
-        return view('/');
+        return view('index');
 
         }else{
             //login first
