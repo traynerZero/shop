@@ -136,7 +136,7 @@ class TransactionController extends Controller
         $request->session()->flush();
 
         $request->session()->flash('success_toast', 'Order succesfuly submitted.');
-        return view("/");
+        return redirect("/");
 
         }else{
             //login first
