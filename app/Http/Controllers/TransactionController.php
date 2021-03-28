@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Product;
+use App\Transaction;
 use Illuminate\Http\Request;
 
 class TransactionController extends Controller
@@ -93,8 +94,40 @@ class TransactionController extends Controller
 
     public function checkout(){
         $cart = session()->get("checkout_data");
-
+        
         return view('checkout')->with('data',$cart);
+    }
+
+    public function saveOrder(Request $request){
+
+        if(!is_null(session()->get('userlogged'))){
+        //user logged in
+        $userid = session()->get('userlogged');
+        $cart = session()->get("checkout_data");
+
+        $total_amount = 0;
+        foreach($cart as $c){
+            $total_amount += $c['total'];
+        }
+        
+        $transaction = new Transaction;
+        $transaction->user_id = $userid;
+        $transaction->products = json_encode($cart);
+        $transaction->total_amount = $total_amount;
+        $transaction->status = 1;
+        $transaction->save();
+
+        $request->session()->forget('cart');
+        $request->session()->forget('checkout_data');
+        $request->session()->flush();
+
+        return redirect('/');
+
+        }else{
+            //login first
+        }
+
+
     }
 
 }

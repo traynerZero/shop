@@ -14,10 +14,7 @@ class LoginController extends Controller
      * @param  int  $id
      * @return Response
      */
-    public function test()
-    {
-        return view('login', ['user' => Users::where('userid', '1')->first()]);
-    }
+   
 
     public function signIn(Request $request){
         session_start();

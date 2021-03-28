@@ -39,3 +39,5 @@ Route::get('/clearCart','TransactionController@clearCart');
 Route::get('/viewCart','TransactionController@viewCart');
 
 Route::get('/checkout','TransactionController@checkout');
+
+Route::get('/saveOrder','TransactionController@saveOrder');
