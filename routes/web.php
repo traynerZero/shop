@@ -41,3 +41,5 @@ Route::get('/viewCart','TransactionController@viewCart');
 Route::get('/checkout','TransactionController@checkout');
 
 Route::get('/saveOrder','TransactionController@saveOrder');
+
+Route::get('/admin',"AdminController@index");
