@@ -55,6 +55,10 @@
 		</div>
 	</section>
 
+	<div class="alert alert-success addedToCart" style="display:none;">
+    <strong>Success!</strong> You should <a href="#" class="alert-link">read this message</a>.
+  	</div>
+
 	
 <style>
 
@@ -114,6 +118,10 @@
 					encode: true,
 					}).done(function (data) {
 					console.log(data);
+					$('.addedToCart').show('blind');
+					setTimeout(() => {
+						$('.addedToCart').hide('blind');
+					}, 1000);
 				});
 
 			});
