@@ -201,12 +201,7 @@ class TransactionController extends Controller
             "number" => $cnumber,
             "exp_month" => $exp_month,
             "exp_year" => $exp_year,
-            "cvc" => $cvc,
-            "address_city" => $address_city,
-            "address_line1" => $address_line1,
-            "address_line2" => $address_line2email,
-            "address_state" => $address_state,
-            "address_zip" => $address_zip
+            "cvc" => $cvc
         )
         );
 
