@@ -21,6 +21,7 @@
             </tr>
           </thead>
           <tbody>
+            @if(!is_null($data))
             @foreach($data as $product)
             <tr>
               <td class="w-25">
@@ -32,6 +33,7 @@
               <td>{{ number_format($product['total'],2) }}</td>
             </tr>
             @endforeach
+            @endif
           </tbody>
         </table> 
         <a  href="{{ url('/clearCart') }}" class="btn btn-success">Clear Cart</a>
