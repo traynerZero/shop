@@ -124,14 +124,12 @@
 	<div class="container">
 				<table class="table table-condensed table-responsive table-hover">
 					<thead>
-						<tr class="cart_menu">
-							<td class="image">ORDER ID</td>
-							<td class="description">CUSTOMER ID</td>
-							<td class="price">PRODUCTS</td>
-							<td class="quantity">TOTAL AMOUNT</td>
-							<td class="total">STATUS</td>
-							<td>ACTION</td>
-						</tr>
+							<th class="image">ORDER ID</th>
+							<th class="description">CUSTOMER ID</th>
+							<th class="price">PRODUCTS</th>
+							<th class="quantity">TOTAL AMOUNT</th>
+							<th class="total">STATUS</th>
+							<th>ACTION</th>
 					</thead>
 					<tbody>
 					@foreach($data as $trans)
