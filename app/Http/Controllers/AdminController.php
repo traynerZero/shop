@@ -15,7 +15,7 @@ class AdminController extends Controller
         
         $transactions = DB::table('transaction')
         ->join('users', 'transaction.user_id', '=', 'users.userid')
-        ->where("status","=","1")-get();
+        ->where("status","=","1")->get();
 
         return view("admin")->with('data',$transactions);
 
