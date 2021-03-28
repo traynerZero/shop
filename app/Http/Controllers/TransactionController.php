@@ -255,7 +255,7 @@ class TransactionController extends Controller
         foreach($cart as $c){
             $total_amount += $c['total'];
 
-            $p = Product::where("product_id","=",$c['prod_id'])->get();
+            $p = Product::where("product_id","=",$c['prod_id'])->first();
             $products .= $p->product_name." - ".$c['quant']." pcs - ".$c['total']."\n";
         }
 
