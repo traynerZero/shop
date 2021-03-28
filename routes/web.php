@@ -46,6 +46,8 @@ Route::get('/saveOrder','TransactionController@saveOrder');
 
 Route::get('/admin',"AdminController@index");
 
+Route::get('/inputCardInfo','TransactionController@inputCardInfo');
+
 
 Route::get('/connectMagpie','TransactionController@connectMagpie');
 

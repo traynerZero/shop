@@ -55,6 +55,10 @@ class TransactionController extends Controller
         return view('modal')->with('data',$data);
     }
 
+    public function inputCardInfo(){
+        return view('card');
+    }
+
     public function addtoCart(Request $request){
 
         $product_id = $request->input("id");

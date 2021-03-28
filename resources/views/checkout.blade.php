@@ -53,7 +53,7 @@
 				</table>
 			</div>
 			<div class="payment-options">
-					<a class="btn btn-primary" href="{{ url('/saveOrder') }}">Continue</a>
+					<a class="btn btn-primary" href="{{ url('/inputCardInfo') }}" role="tab" data-toggle="modal" data-target="#cardModal">Continue</a>
 			</div>
 		</div>
 	</section> <!--/#cart_items-->
