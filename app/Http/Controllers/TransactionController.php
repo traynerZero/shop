@@ -101,7 +101,7 @@ class TransactionController extends Controller
 
     public function checkout(){
         if(is_null(session()->get("checkout_data"))){
-            return view('/');
+            return back();
         }else{
         $cart = session()->get("checkout_data");
         
