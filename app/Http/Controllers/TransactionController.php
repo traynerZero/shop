@@ -183,7 +183,8 @@ class TransactionController extends Controller
         
         Black Shirt 3 - 1 pcs. - 700";
 
-        $header = base64_encode('pk_test_JoAZxCrQclxmAwfPRrESow'. ':');
+        
+        $header = base64_encode('sk_test_uanH3h8R39X3Uoi9KODBlw'. ':');
 
         $chargeObj = array(
             "amount" => $total_amount,
