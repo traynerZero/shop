@@ -227,14 +227,15 @@ class TransactionController extends Controller
         $httpcode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
         curl_close($ch);
 
+        echo $response;
         if($httpcode == 201){
-            return $this->createChargeMagpie();
+            // return $this->createChargeMagpie();
         }else if($httpcode == 401){
-            $request->session()->flash('error_toast', 'API key provided is not acceptable. Must be one of (pk_live_key sk_live_key pk_test_key sk_test_key).');
-            return back();
+            // $request->session()->flash('error_toast', 'API key provided is not acceptable. Must be one of (pk_live_key sk_live_key pk_test_key sk_test_key).');
+            // return back();
         }else{
-            $request->session()->flash('error_toast', 'Card number provided is not a valid card.');
-            return back();
+            // $request->session()->flash('error_toast', 'Card number provided is not a valid card.');
+            // return back();
         }
         
     }
