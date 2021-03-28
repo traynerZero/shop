@@ -25,7 +25,7 @@
             @foreach($data as $product)
             <tr>
               <td class="w-25">
-                <img style="width:10vh; height 10vh;" src="images/home/{{ $product['image'] }}" class="img-fluid img-thumbnail" alt="Sheep">
+                <img style="width:10vh; height 10vh;" src="images/shop/{{ $product['image'] }}" class="img-fluid img-thumbnail" alt="Sheep">
               </td>
               <td>{{ $product['prod_name'] }}</td>
               <td>{{ number_format($product['price'],2) }}</td>
