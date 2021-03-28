@@ -19,10 +19,10 @@ class TransactionController extends Controller
 
     public function viewCart(Request $request){
         $data = array();
-        
+
         if(is_null(session()->get("cart"))){
             $request->session()->flash('error_toast', 'Cart is Empty');
-            return view('modal');
+            return view('modal')->with('data',$data);
         }else{
         $cart = session()->get("cart");
         $ids = array();
