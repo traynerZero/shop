@@ -124,7 +124,7 @@ class TransactionController extends Controller
         $request->session()->forget('checkout_data');
         $request->session()->flush();
 
-        return redirect('/');
+        return view('/');
 
         }else{
             //login first
