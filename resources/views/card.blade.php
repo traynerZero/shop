@@ -95,7 +95,7 @@ a {
 			<span aria-hidden="true">&times;</span>
 			</button>
 		<form action="{{ url('/connectMagpie') }}" method="post" >
-		
+		{{ csrf_field() }}
 		  <div class="card-row">
 			<div class="col-50">
 			  <h3>Billing Address</h3>
