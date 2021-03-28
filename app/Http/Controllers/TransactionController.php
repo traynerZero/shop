@@ -205,6 +205,7 @@ class TransactionController extends Controller
         )
         );
 
+        echo json_encode($cardObj);
 
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, "https://api.magpie.im/v1/tokens");
