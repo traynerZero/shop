@@ -43,7 +43,7 @@
 								<li><a href="#"><i class="fa fa-user"></i>{{ session()->get("userdata")['email'] }}</a></li>
 								<li><a href="#"><i class="fa fa-star"></i> Wishlist</a></li>
 								<li><a href="{{ url('/checkout') }}"><i class="fa fa-crosshairs"></i> Checkout</a></li>
-								<li><a href="{{ url('/viewCart') }}" role="tab" data-toggle="modal" data-target="#cartModal"><i class="fa fa-shopping-cart"></i> Cart</a></li>
+								<li><a href="{{ url('/viewCart') }}" id="viewCart" role="tab" data-toggle="modal" data-target="#cartModal"><i class="fa fa-shopping-cart"></i> Cart</a></li>
 								<li><a href="{{ url('/logout') }}"><i class="fa fa-lock"></i> Logout</a></li>
 							</ul>
 						</div>
@@ -125,3 +125,20 @@
 	<script src="{{ asset('js/price-range.js') }}"></script>
     <script src="{{ asset('js/jquery.prettyPhoto.js') }}"></script>
     <script src="{{ asset('js/main.js') }}"></script>
+
+	<script>
+
+	$('#viewCart').on('click',function(){
+
+		ev.preventDefault();
+		var target = $(this).attr("href");
+
+		// load the url and show modal on success
+		$("#cartModal .modal-body").load(target, function() { 
+			$("#cartModal").modal("show"); 
+		});
+
+	});
+
+
+	</script>
