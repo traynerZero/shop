@@ -1,5 +1,5 @@
 
-<div style="width:50%;">
+<div>
 <div class="modal-header border-bottom-0" style="background-color:white;">
 			<h5 class="modal-title" id="exampleModalLabel">
 			Your Shopping Cart
@@ -35,7 +35,7 @@
                 <a href="#" class="btn btn-danger btn-sm">
                   <i class="fa fa-minus"></i>
                 </a>
-                <a href="#" class="btn btn-danger btn-sm">
+                <a href="#" class="btn btn-success btn-sm">
                   <i class="fa fa-plus"></i>
                 </a>
               </td>
