@@ -15,11 +15,11 @@
 	<section>
 		<div class="container">
 			<div class="row">
-				<div class="col-sm-9 padding-right">
+				<div class="col-md-12 padding-right">
 					<div class="features_items"><!--features_items-->
 						<h2 class="title text-center">Features Items</h2>
 						@foreach($data as $product)
-						<div class="col-sm-4">
+						<div class="col-sm-3">
 							<div class="product-image-wrapper">
 								<div class="single-products">
 										<div class="productinfo text-center">
