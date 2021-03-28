@@ -37,3 +37,5 @@ Route::post('/addtoCart',[
 Route::get('/clearCart','TransactionController@clearCart');
 
 Route::get('/viewCart','TransactionController@viewCart');
+
+Route::get('/checkout','TransactionController@checkout');

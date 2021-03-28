@@ -32,6 +32,7 @@ class TransactionController extends Controller
                     $d = array(
                         "prod_id" => $prod->product_id,
                         "prod_name" => $prod->product_name,
+                        "prod_description" => $prod->product_description,
                         "price" => $prod->price,
                         "quantity" => $c['quant'],
                         "total" => $prod->price * $c['quant']
@@ -43,6 +44,9 @@ class TransactionController extends Controller
 
             }
         }
+
+        session()->put('checkout_data', $data);
+        $request->session()->save(); 
 
         return view('modal')->with('data',$data);
     }
@@ -85,6 +89,10 @@ class TransactionController extends Controller
         $request->session()->save(); 
         echo json_encode(session()->get("cart"));
 
+    }
+
+    public function checkout(){
+        $cart = session()->get("checkout_data");
     }
 
 }
