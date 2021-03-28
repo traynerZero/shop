@@ -228,7 +228,7 @@ class TransactionController extends Controller
         curl_close($ch);
 
         $response_data = json_decode($response);
-        $token_card = $response_data['id'];
+        $token_card = $response_data->id;
         // echo $response;
         if($httpcode == 201){
             return $this->createChargeMagpie($token_card);
