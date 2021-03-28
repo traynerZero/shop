@@ -141,13 +141,13 @@ class TransactionController extends Controller
         $request->session()->forget('cart');
         $request->session()->forget('checkout_data');
 
-        $request->session()->flash('success_toast', 'Order succesfuly submitted.');
-        
         session()->put('userdata', session()->get("userdata"));
         session()->put('userlogged', session()->get("userlogged")); 
         $request->session()->save(); 
 
-        return redirect("/");
+        
+
+        return redirect("/")->with("success_toast",'Order succesfuly submitted.');
 
         }else{
             //login first
