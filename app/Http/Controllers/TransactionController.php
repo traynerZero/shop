@@ -108,6 +108,9 @@ class TransactionController extends Controller
         $total_amount = 0;
         foreach($cart as $c){
             $total_amount += $c['total'];
+
+            Product::where(["product_id","=",$c['prod_id']])->decrement('stocks',$c['quantity']);
+
         }
         
         $transaction = new Transaction;
