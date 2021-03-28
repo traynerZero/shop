@@ -138,19 +138,19 @@
 					@foreach($data as $trans)
 						<tr>
 							<td>
-								{{ $trans['transaction_id'] }}
+								{{ $trans->transaction_id }}
 							</td>
-							<td>{{ $trans['email'] }}</td>
+							<td>{{ $trans->email }}</td>
 							<td>
-								@foreach(json_decode($trans['products']) as $prod)
+								@foreach(json_decode($trans->products) as $prod)
 								<p>{{ $prod->prod_name }} - {{ $prod->quantity }} pcs. - {{ $prod->total }}</p>
 								@endforeach
 							</td>
 							<td>
-								<p>{{ number_format($trans['total_amount'],2) }}</p>
+								<p>{{ number_format($trans->total_amount,2) }}</p>
 							</td>
 							<td>
-								<p>{{ $trans['status'] }}</p>
+								<p>Active</p>
 							</td>
 							<td>
 								<a class="cart_quantity_delete" href=""><i class="fa fa-info"></i></a>
