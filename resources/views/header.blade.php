@@ -128,7 +128,7 @@
 
 	<script>
 
-	$('#viewCart').on('click',function(){
+	$('#viewCart').on('click',function(ev){
 
 		ev.preventDefault();
 		var target = $(this).attr("href");
