@@ -18,9 +18,11 @@ class TransactionController extends Controller
     }
 
     public function viewCart(Request $request){
+        $data = array();
+        
         if(is_null(session()->get("cart"))){
-            $request->session()->flash('success_toast', 'Order succesfuly submitted.');
-            return back();
+            $request->session()->flash('error_toast', 'Cart is Empty');
+            return view('modal');
         }else{
         $cart = session()->get("cart");
         $ids = array();
@@ -30,7 +32,7 @@ class TransactionController extends Controller
 
         $product = Product::whereIn('product_id',$ids)->get();
 
-        $data = array();
+        
         foreach($cart as $c){
             foreach($product as $prod){
                 
