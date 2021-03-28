@@ -2,7 +2,7 @@
 <style>
 
 
-.card-card-row {
+.card-row {
   display: -ms-flexbox; /* IE10 */
   display: flex;
   -ms-flex-wrap: wrap; /* IE10 */
@@ -91,6 +91,9 @@ a {
 <div class="card-row">
 	<div class="col-75">
 	  <div class="container">
+	  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			<span aria-hidden="true">&times;</span>
+			</button>
 		<form action="{{ url('/connectMagpie') }}" method="post" >
 		
 		  <div class="card-row">
