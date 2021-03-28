@@ -42,6 +42,7 @@ class TransactionController extends Controller
                         "prod_id" => $prod->product_id,
                         "prod_name" => $prod->product_name,
                         "prod_description" => $prod->product_description,
+                        "image" => $prod->image,
                         "price" => $prod->price,
                         "quantity" => $c['quant'],
                         "total" => $prod->price * $c['quant']
