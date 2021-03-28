@@ -247,12 +247,19 @@ class TransactionController extends Controller
         //tok_VIP0cUu1U4obvKVw4
         //generated token
 
-        $total_amount = 2300;
-        $products = "Black Shirt 2 - 1 pcs. - 600
+        $cart = session()->get("checkout_data");
 
-        Black Shirt 1 - 2 pcs. - 1000
-        
-        Black Shirt 3 - 1 pcs. - 700";
+        $total_amount = 0;
+        $products = "";
+
+        foreach($cart as $c){
+            $total_amount += $c['total'];
+
+            $p = Product::where("product_id","=",$c['prod_id'])->get();
+            $products .= $p->product_name." - ".$c['quant']." pcs - ".$c['total']."\n";
+        }
+
+       
 
         
         $header = base64_encode('sk_test_uanH3h8R39X3Uoi9KODBlw'. ':');
@@ -261,7 +268,7 @@ class TransactionController extends Controller
             "amount" => $total_amount,
             "currency"=> "php",
             "source"=> $token_card,
-            "description\""=> $products,
+            "description"=> $products,
             "statement_descriptor"=> "ShopHere",
             "capture"=> true
         );
@@ -282,7 +289,6 @@ class TransactionController extends Controller
         $response = curl_exec($ch);
         curl_close($ch);
 
-        var_dump($response);
         echo $response;
 
 
