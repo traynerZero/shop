@@ -11,7 +11,7 @@
     <link href="{{ asset('css/prettyPhoto.css') }}" rel="stylesheet">
     <link href="{{ asset('css/price-range.css')}}" rel="stylesheet">
     <link href="{{ asset('css/animate.css')}}" rel="stylesheet">
-	<!-- <link href="{{ asset('css/main.css')}}" rel="stylesheet"> -->
+	<link href="{{ asset('css/main.css')}}" rel="stylesheet">
 	<link href="{{ asset('css/responsive.css')}}" rel="stylesheet">
     <!--[if lt IE 9]>
     <script src="js/html5shiv.js"></script>
@@ -121,8 +121,8 @@
     <script src="{{ asset('js/main.js') }}"></script>
 
 
-<div class="table-responsive cart_info">
-				<table class="table table-condensed table-dark table-hover">
+	<div class="container">
+				<table class="table table-condensed table-responsive table-hover">
 					<thead>
 						<tr class="cart_menu">
 							<td class="image">ORDER ID</td>
@@ -158,4 +158,5 @@
 					@endforeach
 					</tbody>
 				</table>
-</div>
+	</div>
+</body>
