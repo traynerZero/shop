@@ -41,7 +41,6 @@
 						<div class="shop-menu pull-right">
 							<ul class="nav navbar-nav">
 								<li><a href="#"><i class="fa fa-user"></i>{{ session()->get("userdata")['email'] }}</a></li>
-								<li><a href="#"><i class="fa fa-star"></i> Wishlist</a></li>
 								<li><a href="{{ url('/checkout') }}"><i class="fa fa-crosshairs"></i> Checkout</a></li>
 								<li><a href="{{ url('/viewCart') }}" id="viewCart" role="tab" data-toggle="modal" data-target="#cartModal"><i class="fa fa-shopping-cart"></i> Cart</a></li>
 								<li><a href="{{ url('/logout') }}"><i class="fa fa-lock"></i> Logout</a></li>
@@ -65,7 +64,6 @@
 						<div class="shop-menu pull-right">
 							<ul class="nav navbar-nav">
 								<li><a href="#"><i class="fa fa-user"></i> Account</a></li>
-								<li><a href="#"><i class="fa fa-star"></i> Wishlist</a></li>
 								<li><a href="{{ url('/checkout') }}"><i class="fa fa-crosshairs"></i> Checkout</a></li>
 								<li><a href="{{ url('/viewCart') }}" id="viewCart" role="tab" data-toggle="modal" data-target="#cartModal"><i class="fa fa-shopping-cart"></i> Cart</a></li>
 								<li><a href="{{ url('/login') }}"><i class="fa fa-lock"></i> Login</a></li>
