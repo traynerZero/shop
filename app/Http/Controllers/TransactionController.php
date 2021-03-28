@@ -100,9 +100,13 @@ class TransactionController extends Controller
     }
 
     public function checkout(){
+        if(is_null(session()->get("checkout_data"))){
+            return view('/');
+        }else{
         $cart = session()->get("checkout_data");
         
         return view('checkout')->with('data',$cart);
+        }
     }
 
     public function saveOrder(Request $request){
