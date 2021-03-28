@@ -135,7 +135,8 @@ class TransactionController extends Controller
         $request->session()->forget('checkout_data');
         $request->session()->flush();
 
-        return view('index');
+        $request->session()->flash('success_toast', 'Order succesfuly submitted.');
+        return view("/");
 
         }else{
             //login first

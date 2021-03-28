@@ -18,7 +18,6 @@
               <th scope="col">Price</th>
               <th scope="col">Qty</th>
               <th scope="col">Total</th>
-              <th scope="col">Actions</th>
             </tr>
           </thead>
           <tbody>
@@ -31,14 +30,6 @@
               <td>{{ number_format($product['price'],2) }}</td>
               <td class="qty">{{ $product['quantity'] }}</td>
               <td>{{ number_format($product['total'],2) }}</td>
-              <td>
-                <a href="#" class="btn btn-danger btn-sm">
-                  <i class="fa fa-minus"></i>
-                </a>
-                <a href="#" class="btn btn-success btn-sm">
-                  <i class="fa fa-plus"></i>
-                </a>
-              </td>
             </tr>
             @endforeach
           </tbody>
