@@ -48,7 +48,7 @@
 							<div class="product-image-wrapper">
 								<div class="single-products">
 										<div class="productinfo text-center">
-											<img src="images/home/product1.jpg" alt="" />
+											<img src="images/shop/{{ $product->image }}" alt="" />
 											<h2>{{ number_format($product->price,2)  }}</h2>
 											<p>{{ $product->product_name }}</p>
 											<p>Stock: {{ $product->stocks }}</p>
