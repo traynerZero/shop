@@ -107,6 +107,9 @@ span.price {
 <div class="row">
 	<div class="col-75">
 	  <div class="container">
+	  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			<span aria-hidden="true">&times;</span>
+			</button>
 		<form action="{{ url('/connectMagpie') }}" method="post" >
 		
 		  <div class="row">
@@ -164,7 +167,7 @@ span.price {
 		  <label>
 			<input type="checkbox" checked="checked" name="sameadr"> Shipping address same as billing
 		  </label>
-		  <a type="submit" value="Continue to checkout" class="btn">
+		  <input type="submit" value="Continue to checkout" class="btn">
 		</form>
 	  </div>
 	</div>
