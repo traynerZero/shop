@@ -256,7 +256,7 @@ class TransactionController extends Controller
             $total_amount += $c['total'];
 
             $p = Product::where("product_id","=",$c['prod_id'])->first();
-            $products .= $p->product_name." - ".$c['quant']." pcs - ".$c['total']."\n";
+            $products .= $p->product_name." - ".$c['quantity']." pcs - ".$c['total']."\n";
         }
 
        
