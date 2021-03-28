@@ -105,7 +105,7 @@ class TransactionController extends Controller
 
     }
 
-    public function checkout(){
+    public function checkout(Request $request){
         if(is_null(session()->get("checkout_data"))){
             $request->session()->flash('error_toast', 'Cart is Empty');
             return back();
