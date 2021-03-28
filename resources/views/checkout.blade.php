@@ -29,7 +29,7 @@
 					@foreach($data as $product)
 						<tr>
 							<td class="cart_product">
-								<a href=""><img src="images/shop/{{ $product->image }}" alt=""></a>
+								<a href=""><img src="images/shop/{{ $product->image }}" alt="" style="width:100px; height:200px;"></a>
 							</td>
 							<td class="cart_description">
 								<h4><a href="">{{ $product['prod_name'] }}</a></h4>
