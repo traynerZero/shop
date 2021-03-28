@@ -12,7 +12,9 @@ class AdminController extends Controller
     public function index()
     {
         
-        $transactions = Transaction::where('status','1')->get();
+        $transactions = DB::table('transaction')
+        ->join('users', 'transaction.user_id', '=', 'users.userid')
+        ->where("status","=","1")-get();
 
         return view("admin")->with('data',$transactions);
 
