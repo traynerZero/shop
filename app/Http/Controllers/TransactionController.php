@@ -15,7 +15,7 @@ class TransactionController extends Controller
         $request->session()->forget('checkout_data');
         $request->session()->flush();
 
-        return view('index');
+        return back();
     }
 
     public function viewCart(Request $request){
