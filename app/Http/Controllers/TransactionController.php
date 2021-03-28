@@ -12,7 +12,10 @@ class TransactionController extends Controller
 
     public function clearCart(Request $request){
         $request->session()->forget('cart');
+        $request->session()->forget('checkout_data');
         $request->session()->flush();
+
+        return view('/');
     }
 
     public function viewCart(Request $request){

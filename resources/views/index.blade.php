@@ -55,9 +55,20 @@
 		</div>
 	</section>
 
-	<div class="alert alert-success addedToCart" style="display:none;">
-    <strong>Success!</strong> You should <a href="#" class="alert-link">read this message</a>.
-  	</div>
+	<div aria-live="polite" aria-atomic="true" style="position: relative; min-height: 200px;">
+  <div class="toast" style="position: absolute; top: 0; right: 0;">
+    <div class="toast-header">
+      <img src="..." class="rounded btn-success" alt="...">
+      <strong class="mr-auto">Added to Cart</strong>
+      <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="toast-body">
+      Successfuly Added to Cart!
+    </div>
+  </div>
+</div>
 
 	
 <style>
@@ -118,10 +129,7 @@
 					encode: true,
 					}).done(function (data) {
 					console.log(data);
-					$('.addedToCart').show('blind');
-					setTimeout(() => {
-						$('.addedToCart').hide('blind');
-					}, 1000);
+					$('.toast').toast('show');
 				});
 
 			});
